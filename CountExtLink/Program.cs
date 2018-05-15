@@ -29,7 +29,7 @@ namespace CountExtLink
 			}.Distinct();
 		}
 
-		private static async Task RetriveExtLincCount(string url)
+		private static async Task RetriveExtLinkCount(string url)
 		{
 			try
 			{
@@ -64,7 +64,7 @@ namespace CountExtLink
 			var urls = GetURLs(null);
 			_urlsCount = urls.Count();
 
-            var tasks = urls.Select(url => Task.Run(() => RetriveExtLincCount(url)));
+            var tasks = urls.Select(url => Task.Run(() => RetriveExtLinkCount(url)));
 			Task.WhenAll(tasks).Wait();
 
 			Console.WriteLine();
